@@ -44,7 +44,7 @@ public class GoodController{
         {
            wrapper.like(Good::getGoodname, search);
         }
-        Page<Good> GoodPage = goodMapper.selectPage(new Page<>(), wrapper);
+        Page<Good> GoodPage = goodMapper.selectPage(new Page<>(1,1000), wrapper);
         return Result.success(GoodPage);
     }
 

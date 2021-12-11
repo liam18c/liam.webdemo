@@ -42,8 +42,7 @@
           <el-input v-model="form.price"></el-input>
         </el-form-item>
         <el-form-item label="商品图片">
-          <el-upload ref="upload"
-                     action="http://localhost:9090/files/upload" :on-success="Fileuploadsuccess">
+          <el-upload ref="upload" action="http://8.134.128.229:9090/files/upload" :on-success="Fileuploadsuccess">
             <el-button  type="primary">上传图片</el-button>
           </el-upload>
         </el-form-item>

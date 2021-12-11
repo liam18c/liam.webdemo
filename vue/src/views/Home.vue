@@ -42,8 +42,7 @@
           <el-input v-model="form.price"></el-input>
         </el-form-item>
         <el-form-item label="商品图片">
-          <el-upload ref="upload"
-              action="http://localhost:9090/files/upload" :on-success="Fileuploadsuccess">
+          <el-upload ref="upload"  action="http://8.134.128.229:9090/files/upload" :on-success="Fileuploadsuccess">
             <el-button  type="primary">上传图片</el-button>
           </el-upload>
         </el-form-item>
@@ -53,7 +52,7 @@
       </el-form>
       <template #footer>
       <span class="dialog-footer">
-        <el-button @click="dialogVisible = false">取消</el-button>
+        <el-button @click="dialogVisible1 = false">取消</el-button>
         <el-button type="primary" @click="save">确定</el-button>
       </span>
       </template>
@@ -90,6 +89,7 @@
 
 import request from "@/utils/request";
 
+
 export default {
   name: 'Home',
   components: {},
@@ -114,12 +114,14 @@ export default {
       dialogVisible2: false,
       search: '',
       tableData: [],
+
     }
   },
   created() {
     this.load()
       let userStr = sessionStorage.getItem("user") || "{}"
       this.user = JSON.parse(userStr)
+
   },
   methods:
       {

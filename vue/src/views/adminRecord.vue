@@ -16,7 +16,6 @@
       </template>
     </el-table-column>
     <el-table-column prop="goodname" label="商品描述"  />
-    <el-table-column prop="goodname" label="商品描述"  />
     <el-table-column prop="gaddress" label="发货地址" />
     <el-table-column prop="uaddress" label="收获地址" />
     <el-table-column prop="price" label="价格" />

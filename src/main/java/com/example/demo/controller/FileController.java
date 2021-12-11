@@ -18,10 +18,7 @@ import java.util.List;
 @RequestMapping("/files")
 public class FileController {
 
-    @Value("${server.port}")
-    private String port;
 
-    private static final String ip ="http://localhost";
 
     /**
          * 上传接口
@@ -36,7 +33,7 @@ public class FileController {
             String flag = IdUtil.fastSimpleUUID();
             String rootFilePath = System.getProperty("user.dir") + "/files/" + flag + "_" + originalFilename;  // 获取上传的路径
             FileUtil.writeBytes(file.getBytes(), rootFilePath);  // 把文件写入到上传的路径
-            return Result.success(ip + ":" + port + "/files/" + flag);  // 返回结果 url
+            return Result.success("http://8.134.128.229:9090/files/" + flag);  // 返回结果 url
         }
 
     /**

@@ -35,14 +35,14 @@ public class RecordController {
     @GetMapping("/{uid}")
     public Result<?> findPage(@PathVariable Long uid) {
         LambdaQueryWrapper<Record> wrapper = Wrappers.<Record>lambdaQuery().eq(Record::getUid, uid);
-        Page<Record> RecordPage = recordMapper.selectPage(new Page<>(), wrapper);
+        Page<Record> RecordPage = recordMapper.selectPage(new Page<>(1,1000), wrapper);
         return Result.success(RecordPage);
     }
 
     @GetMapping
     public Result<?> findPage(){
         LambdaQueryWrapper<Record> wrapper = Wrappers.<Record>lambdaQuery();
-        Page<Record> RecordPage = recordMapper.selectPage(new Page<>(), wrapper);
+        Page<Record> RecordPage = recordMapper.selectPage(new Page<>(1,1000), wrapper);
         return Result.success(RecordPage);
     }
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-menu
-        style="width: 200px;min-height: 100vh"
+        style="width: 200px;min-height: 100%"
         background-color="#57fdff"
         text-color="#000000"
         default-active="all"

@@ -40,7 +40,7 @@ public class CartController {
     @GetMapping("/{uid}")
     public Result<?> findPage(@PathVariable Long uid) {
         LambdaQueryWrapper<Cart> wrapper=Wrappers.<Cart>lambdaQuery().eq(Cart::getUid,uid);
-        Page<Cart> CartPage = cartMapper.selectPage(new Page<>(), wrapper);
+        Page<Cart> CartPage = cartMapper.selectPage(new Page<>(1,1000), wrapper);
         return Result.success(CartPage);
     }
 
